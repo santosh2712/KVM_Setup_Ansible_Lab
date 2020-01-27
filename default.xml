@@ -1,0 +1,21 @@
+<network>
+  <name>default</name>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='virbr1' stp='on' delay='0'/>
+  <mac address='52:54:00:0a:cd:21'/>
+  <ip address='192.168.10.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.10.2' end='192.168.10.254'/>
+      <host mac='52:54:00:35:10:51' name='ansnode_1' ip='192.168.10.101'/>
+      <host mac='52:54:00:35:10:52' name='ansnode_2' ip='192.168.10.102'/>
+      <host mac='52:54:00:35:10:53' name='ansnode_3' ip='192.168.10.103'/>
+      <host mac='52:54:00:35:10:54' name='ansnode_4' ip='192.168.10.104'/>
+      <host mac='52:54:00:35:10:55' name='ansnode_5' ip='192.168.10.105'/>
+    </dhcp>
+  </ip>
+</network>
+

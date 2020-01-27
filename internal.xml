@@ -1,0 +1,16 @@
+<network>
+  <name>internal</name>
+  <bridge name='virbr2' stp='on' delay='0'/>
+  <mac address='52:54:00:57:ef:a8'/>
+  <domain name='internal'/>
+  <ip address='192.168.20.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.20.101' end='192.168.20.110'/>
+      <host mac='52:54:00:34:98:51' ip='192.168.20.101'/>
+      <host mac='52:54:00:34:98:52' ip='192.168.20.102'/>
+      <host mac='52:54:00:34:98:53' ip='192.168.20.103'/>
+      <host mac='52:54:00:34:98:54' ip='192.168.20.104'/>
+      <host mac='52:54:00:34:98:55' ip='192.168.20.105'/>
+    </dhcp>
+  </ip>
+</network>
