@@ -138,8 +138,9 @@ if [[ $UID -eq 0 ]] && [[ "$base_VM_State" = "$Base_Clone_KVM_NAME"  ]] ; then
 				echo "=========================================================="
 				echo -e "Attaching NIC eth$i TO $NAT network.\\nAnd ens$i TO $INTERNAL network ON $VMNAME"
 				echo "----------------------------------------------------------"
-				virsh attach-interface "$VMNAME" network  "$NAT" 		--target "eth$i" --mac 52:54:00:35:10:5"$i" 
-				virsh attach-interface "$VMNAME" network  "$INTERNAL" 	--target "ens$i" --mac 52:54:00:34:98:5"$i" 
+				virsh attach-interface "$VMNAME" network  "$NAT" 		--target "eth$i" --mac 52:54:00:35:10:5"$i"  --config --live
+				virsh attach-interface "$VMNAME" network  "$INTERNAL" 	--target "ens$i" --mac 52:54:00:34:98:5"$i"  --config --live
+				# virsh attach-interface --domain "$VMNAME"  --type bridge  --source br1 --model virtio --config --live
 				echo "=========================================================="
 				# 
 			done
