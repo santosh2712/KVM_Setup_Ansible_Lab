@@ -144,19 +144,7 @@ In some cases kvm guest auto hostname settings do not work. Check attached defau
 ..............................................
 [root@centos8_master KVM_Setup_Ansible_Lab]# 
 ```
-# Congratulations you have cloned 4 KVM guests for Ansible lab practice. Verify the deployment as follows. 
-
-```
-[root@centos8_master KVM_Setup_Ansible_Lab]# virsh list --all
- Id    Name                           State
-----------------------------------------------------
- 6     AnsNode_1                      running
- 7     AnsNode_2                      running
- 8     AnsNode_3                      running
- 9     AnsNode_4                      running
- -     Clone_Guest                    shut off
-
-```
+# Congratulations you have cloned 4 KVM guests for Ansible lab practice.
 
 # Verify the deployment as follows :-
 
