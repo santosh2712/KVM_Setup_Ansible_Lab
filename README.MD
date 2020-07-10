@@ -95,195 +95,195 @@ Open Terminal and login as root. Switch to the directory where you copied the co
 ```
 In our case we will be using ** “Clone_Guest”** to clone and create Ansible practice lab from it. 
 
-So lets begin cloning process  open the terminal and  navigate to the directory where you copied the code and  issue the  following command as root , or use some privilege escalation.
+So lets begin cloning process  open the terminal and  navigate to the directory where you copied the code and  issue the  following command as root  or use some privilege escalation.
 
 ```
 [[root@centos8_master KVM_Setup_Ansible_Lab]# sh KVM_Guest_Clone.sh 
-......................................................................................................................................................
+................................
 Found Host OS : Red Hat
 Found Host OS is Red Hat with Version : 8
-......................................................................................................................................................
+................................
 Enter kvm guest name to clone or use found kvm Default[Clone_Guest]:Clone_Guest
-......................................................................................................................................................
+................................
 Enter kvm guest Installation path  Default[/var/lib/libvirt/images]:
 KVM_Guest_Disk_DIR :/var/lib/libvirt/images
-======================================================================================================================================================
+======================================
 Checking Virtual Networks my_lab_nat my_lab_internal
-======================================================================================================================================================
-------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================
+................................
 INFO: Network my_lab_nat is Created. Starting network my_lab_nat
-------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
+................................
 INFO: Network my_lab_internal is Created. Starting network my_lab_internal
-------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
+................................
 INFO: Service libvirtd found running. 
-------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
+................................
 Do you want to clear all existing guest with name Ansnode_* 
 | Choose an option: Enter input between 1-3 only |
 ===================================================
 1) Clear All AnsNode_* Guests      3) Quit
 2) Clear only New AnsNode_ Guests
 #? 1
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
 INFO: Cleared all KVM guest with from AnsNode_01 to AnsNode_99
-------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
+................................
+................................
 Script can clone Maximum 99 KVM guest with Fixed IP allocation
 Enter Number of Clones you want for Lab Default [2]: 5
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
 INFO: Script will Clone 5 KVM Guests. From Clone_Guest Guest
-------------------------------------------------------------------------------------------------------------------------------------------------------
+................................
 Attached_Disk: /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_1_raw_2G
-======================================================================================================================================================
+======================================
 Cloning in Progress from Clone_Guest to AnsNode_1
-......................................................................................................................................................
-Allocating 'AnsNode_1.qcow2'                                                                                                   |  15 GB  00:00:06     
+................................
+................................
 
 Clone 'AnsNode_1' created successfully.
 Additional disk /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_1_raw_2G is Created and it will be Attached to AnsNode_1.
 Disk attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC eth1 TO my_lab_nat network ON AnsNode_1
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC ens1 TO my_lab_internal network ON AnsNode_1
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Setting Memory limit of 512 MB AnsNode_1
 
-......................................................................................................................................................
+................................
 Setting single CPU LIMIT for  AnsNode_1
 
-......................................................................................................................................................
+................................
 Cloning done for AnsNode_1 ! Starting AnsNode_1
 Domain AnsNode_1 started
 
-======================================================================================================================================================
+======================================
 Attached_Disk: /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_2_raw_2G
-======================================================================================================================================================
+======================================
 Cloning in Progress from Clone_Guest to AnsNode_2
-......................................................................................................................................................
-Allocating 'AnsNode_2.qcow2'                                                                                                   |  15 GB  00:00:14     
+................................
+................................
 
 Clone 'AnsNode_2' created successfully.
 Additional disk /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_2_raw_2G is Created and it will be Attached to AnsNode_2.
 Disk attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC eth2 TO my_lab_nat network ON AnsNode_2
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC ens2 TO my_lab_internal network ON AnsNode_2
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Setting Memory limit of 512 MB AnsNode_2
 
-......................................................................................................................................................
+................................
 Setting single CPU LIMIT for  AnsNode_2
 
-......................................................................................................................................................
+................................
 Cloning done for AnsNode_2 ! Starting AnsNode_2
 Domain AnsNode_2 started
 
-======================================================================================================================================================
+======================================
 Attached_Disk: /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_3_raw_2G
-======================================================================================================================================================
+======================================
 Cloning in Progress from Clone_Guest to AnsNode_3
-......................................................................................................................................................
-Allocating 'AnsNode_3.qcow2'                                                                                                   |  15 GB  00:00:22     
+................................
+................................
 
 Clone 'AnsNode_3' created successfully.
 Additional disk /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_3_raw_2G is Created and it will be Attached to AnsNode_3.
 Disk attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC eth3 TO my_lab_nat network ON AnsNode_3
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC ens3 TO my_lab_internal network ON AnsNode_3
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Setting Memory limit of 512 MB AnsNode_3
 
-......................................................................................................................................................
+................................
 Setting single CPU LIMIT for  AnsNode_3
 
-......................................................................................................................................................
+................................
 Cloning done for AnsNode_3 ! Starting AnsNode_3
 Domain AnsNode_3 started
 
-======================================================================================================================================================
+======================================
 Attached_Disk: /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_4_raw_2G
-======================================================================================================================================================
+======================================
 Cloning in Progress from Clone_Guest to AnsNode_4
-......................................................................................................................................................
-Allocating 'AnsNode_4.qcow2'                                                                                                   |  15 GB  00:00:21     
+................................
+................................
 
 Clone 'AnsNode_4' created successfully.
 Additional disk /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_4_raw_2G is Created and it will be Attached to AnsNode_4.
 Disk attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC eth4 TO my_lab_nat network ON AnsNode_4
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC ens4 TO my_lab_internal network ON AnsNode_4
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Setting Memory limit of 512 MB AnsNode_4
 
-......................................................................................................................................................
+................................
 Setting single CPU LIMIT for  AnsNode_4
 
-......................................................................................................................................................
+................................
 Cloning done for AnsNode_4 ! Starting AnsNode_4
 Domain AnsNode_4 started
 
-======================================================================================================================================================
+======================================
 Attached_Disk: /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_5_raw_2G
-======================================================================================================================================================
+======================================
 Cloning in Progress from Clone_Guest to AnsNode_5
-......................................................................................................................................................
-Allocating 'AnsNode_5.qcow2'                                                                                                   |  15 GB  00:00:23     
+................................
+................................
 
 Clone 'AnsNode_5' created successfully.
 Additional disk /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_5_raw_2G is Created and it will be Attached to AnsNode_5.
 Disk attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC eth5 TO my_lab_nat network ON AnsNode_5
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Attaching NIC ens5 TO my_lab_internal network ON AnsNode_5
 Interface attached successfully
 
-......................................................................................................................................................
+................................
 Setting Memory limit of 512 MB AnsNode_5
 
-......................................................................................................................................................
+................................
 Setting single CPU LIMIT for  AnsNode_5
 
-......................................................................................................................................................
+................................
 Cloning done for AnsNode_5 ! Starting AnsNode_5
 Domain AnsNode_5 started
 
-======================================================================================================================================================
-......................................................................................................................................................
+======================================
+................................
 In some cases kvm guest auto hostname setting not work. Check attached my_lab_nat.xml 
-......................................................................................................................................................
+................................
 [root@centos8_master KVM_Setup_Ansible_Lab]# 
 ```
 # Congratulations you have cloned 5 KVM guests for lab practice. :joy:
@@ -292,9 +292,10 @@ In some cases kvm guest auto hostname setting not work. Check attached my_lab_na
 ------------
 
 
-###1. Verify running KVM Guest on Host :-
+### 1. Verify running KVM Guest on Host :-
 
 **Use following command **
+
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]# virsh list --all
  Id    Name                           State
@@ -306,8 +307,10 @@ In some cases kvm guest auto hostname setting not work. Check attached my_lab_na
  15    AnsNode_5                      running
  -      Clone_Guest                    shut off 
 ```
-###2. Verify KVM Guest Information
+
+### 2. Verify KVM Guest Information
 **Use following command **
+
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]#  virsh dominfo --domain AnsNode_1
 Id:             11
@@ -326,8 +329,9 @@ Security model: selinux
 Security DOI:   0
 Security label: system_u:system_r:svirt_t:s0:c294,c405 (enforcing)
 ```
-###3. Verify Attached Block Devices to KVM Guest AnsNode_1
+### 3. Verify Attached Block Devices to KVM Guest AnsNode_1
 **Use following command on KVM Host **
+
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]# virsh domblklist --domain AnsNode_1
 Target     Source
@@ -336,8 +340,9 @@ vda        /var/lib/libvirt/images/AnsNode_1.qcow2
 vdb        /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_1_raw_2G
 
 ```
-###4. Verify virtual networks for lab 
+### 4. Verify virtual networks for lab 
 **Use 'ip a' command on KVM Host **
+
 ```
 [santosh@centos8_master ~]$ ip a
 
@@ -363,6 +368,7 @@ vdb        /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_1_raw_2G
 ## Verify Deployment on KVM Guest :-
 
 ### 1. Verify IP and hostname 
+
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]# ssh 192.168.10.1
 root@192.168.10.1's password: 
@@ -396,9 +402,10 @@ Using** "ip a" **to show network Configuration  of **AnsNode_1** 1st clone
        valid_lft forever preferred_lft forever
 [root@ansnode_1 ~]# 
 ```
-###3. Hostname  Resolution from KVM Guest 
+### 3. Hostname  Resolution from KVM Guest 
 
 For NAT from 'my_lab_nat' network to INTERNET
+
 ```
 [root@ansnode_1 ~]# ping google.com
 PING google.com (172.217.174.238) 56(84) bytes of data.
@@ -414,7 +421,8 @@ rtt min/avg/max/mdev = 85.418/353.628/677.383/250.339 ms
 [root@ansnode_1 ~]#
 ``` 
 https://github.com/santosh2712/KVM_Setup_Ansible_Lab/archive/master.zip
-### 5. Forward lookup from ansnode_1 for ansnode_5  on  KVM Guest
+### 4. Forward lookup from ansnode_1 for ansnode_5  on  KVM Guest
+
 ```
 [root@ansnode_1 ~]# dig ansnode_5
 
@@ -439,7 +447,8 @@ ansnode_5.    0 IN  A 192.168.10.5
 
 [root@ansnode_1 ~]#
 ```
-## 6. Reverse lookup from ansnode_1 of  192.168.10.5 [ansnode_5 IP ]
+### 5. Reverse lookup from ansnode_1 of  192.168.10.5 [ansnode_5 IP ]
+
 ```
 [root@ansnode_1 ~]# dig -x 192.168.10.5
 
@@ -474,7 +483,7 @@ ansnode_5.    0 IN  A 192.168.10.5
 
 from 1 to 99 both network IP address and MAC address will iterate for all KVM Guest named AnsNode_*.
 
-- 'my_lab_nat' network gateway /KVM host IP will be 192.168.10.100
+- 'my_lab_nat' network gateway/KVM host IP will be 192.168.10.100
 
 - 'my_lab_internal' network gateway/KVM host IP will be 192.168.20.100 
 
@@ -488,8 +497,6 @@ AnsNode_99 |52:54:00:10:10:99|192.168.10.99 |52:54:00:20:20:99|192.168.20.99
 
 
 ------------
-
-
 
 
 # We are looking for contribution. We well be happy to merge pull request if it improves code or add some functionality. 
