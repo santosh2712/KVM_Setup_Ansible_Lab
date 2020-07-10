@@ -1,0 +1,115 @@
+<network>
+  <name>my_lab_nat</name>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='NATbr1' stp='on' delay='0'/>
+  <mac address='52:54:00:10:10:00'  />
+  <ip address='192.168.10.100'  netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.10.120' end='192.168.10.254'/>
+      <host mac='52:54:00:10:10:01' name='ansnode_1' ip='192.168.10.1'/>
+      <host mac='52:54:00:10:10:02' name='ansnode_2' ip='192.168.10.2'/>
+      <host mac='52:54:00:10:10:03' name='ansnode_3' ip='192.168.10.3'/>
+      <host mac='52:54:00:10:10:04' name='ansnode_4' ip='192.168.10.4'/>
+      <host mac='52:54:00:10:10:05' name='ansnode_5' ip='192.168.10.5'/>
+      <host mac='52:54:00:10:10:06' name='ansnode_6' ip='192.168.10.6'/>
+      <host mac='52:54:00:10:10:07' name='ansnode_7' ip='192.168.10.7'/>
+      <host mac='52:54:00:10:10:08' name='ansnode_8' ip='192.168.10.8'/>
+      <host mac='52:54:00:10:10:09' name='ansnode_9' ip='192.168.10.9'/>
+      <host mac='52:54:00:10:10:10' name='ansnode_10' ip='192.168.10.10'/>
+      <host mac='52:54:00:10:10:11' name='ansnode_11' ip='192.168.10.11'/>
+      <host mac='52:54:00:10:10:12' name='ansnode_12' ip='192.168.10.12'/>
+      <host mac='52:54:00:10:10:13' name='ansnode_13' ip='192.168.10.13'/>
+      <host mac='52:54:00:10:10:14' name='ansnode_14' ip='192.168.10.14'/>
+      <host mac='52:54:00:10:10:15' name='ansnode_15' ip='192.168.10.15'/>
+      <host mac='52:54:00:10:10:16' name='ansnode_16' ip='192.168.10.16'/>
+      <host mac='52:54:00:10:10:17' name='ansnode_17' ip='192.168.10.17'/>
+      <host mac='52:54:00:10:10:18' name='ansnode_18' ip='192.168.10.18'/>
+      <host mac='52:54:00:10:10:19' name='ansnode_19' ip='192.168.10.19'/>
+      <host mac='52:54:00:10:10:20' name='ansnode_20' ip='192.168.10.20'/>
+      <host mac='52:54:00:10:10:21' name='ansnode_21' ip='192.168.10.21'/>
+      <host mac='52:54:00:10:10:22' name='ansnode_22' ip='192.168.10.22'/>
+      <host mac='52:54:00:10:10:23' name='ansnode_23' ip='192.168.10.23'/>
+      <host mac='52:54:00:10:10:24' name='ansnode_24' ip='192.168.10.24'/>
+      <host mac='52:54:00:10:10:25' name='ansnode_25' ip='192.168.10.25'/>
+      <host mac='52:54:00:10:10:26' name='ansnode_26' ip='192.168.10.26'/>
+      <host mac='52:54:00:10:10:27' name='ansnode_27' ip='192.168.10.27'/>
+      <host mac='52:54:00:10:10:28' name='ansnode_28' ip='192.168.10.28'/>
+      <host mac='52:54:00:10:10:29' name='ansnode_29' ip='192.168.10.29'/>
+      <host mac='52:54:00:10:10:30' name='ansnode_30' ip='192.168.10.30'/>
+      <host mac='52:54:00:10:10:31' name='ansnode_31' ip='192.168.10.31'/>
+      <host mac='52:54:00:10:10:32' name='ansnode_32' ip='192.168.10.32'/>
+      <host mac='52:54:00:10:10:33' name='ansnode_33' ip='192.168.10.33'/>
+      <host mac='52:54:00:10:10:34' name='ansnode_34' ip='192.168.10.34'/>
+      <host mac='52:54:00:10:10:35' name='ansnode_35' ip='192.168.10.35'/>
+      <host mac='52:54:00:10:10:36' name='ansnode_36' ip='192.168.10.36'/>
+      <host mac='52:54:00:10:10:37' name='ansnode_37' ip='192.168.10.37'/>
+      <host mac='52:54:00:10:10:38' name='ansnode_38' ip='192.168.10.38'/>
+      <host mac='52:54:00:10:10:39' name='ansnode_39' ip='192.168.10.39'/>
+      <host mac='52:54:00:10:10:40' name='ansnode_40' ip='192.168.10.40'/>
+      <host mac='52:54:00:10:10:41' name='ansnode_41' ip='192.168.10.41'/>
+      <host mac='52:54:00:10:10:42' name='ansnode_42' ip='192.168.10.42'/>
+      <host mac='52:54:00:10:10:43' name='ansnode_43' ip='192.168.10.43'/>
+      <host mac='52:54:00:10:10:44' name='ansnode_44' ip='192.168.10.44'/>
+      <host mac='52:54:00:10:10:45' name='ansnode_45' ip='192.168.10.45'/>
+      <host mac='52:54:00:10:10:46' name='ansnode_46' ip='192.168.10.46'/>
+      <host mac='52:54:00:10:10:47' name='ansnode_47' ip='192.168.10.47'/>
+      <host mac='52:54:00:10:10:48' name='ansnode_48' ip='192.168.10.48'/>
+      <host mac='52:54:00:10:10:49' name='ansnode_49' ip='192.168.10.49'/>
+      <host mac='52:54:00:10:10:50' name='ansnode_50' ip='192.168.10.50'/>
+      <host mac='52:54:00:10:10:51' name='ansnode_51' ip='192.168.10.51'/>
+      <host mac='52:54:00:10:10:52' name='ansnode_52' ip='192.168.10.52'/>
+      <host mac='52:54:00:10:10:53' name='ansnode_53' ip='192.168.10.53'/>
+      <host mac='52:54:00:10:10:54' name='ansnode_54' ip='192.168.10.54'/>
+      <host mac='52:54:00:10:10:55' name='ansnode_55' ip='192.168.10.55'/>
+      <host mac='52:54:00:10:10:56' name='ansnode_56' ip='192.168.10.56'/>
+      <host mac='52:54:00:10:10:57' name='ansnode_57' ip='192.168.10.57'/>
+      <host mac='52:54:00:10:10:58' name='ansnode_58' ip='192.168.10.58'/>
+      <host mac='52:54:00:10:10:59' name='ansnode_59' ip='192.168.10.59'/>
+      <host mac='52:54:00:10:10:60' name='ansnode_60' ip='192.168.10.60'/>
+      <host mac='52:54:00:10:10:61' name='ansnode_61' ip='192.168.10.61'/>
+      <host mac='52:54:00:10:10:62' name='ansnode_62' ip='192.168.10.62'/>
+      <host mac='52:54:00:10:10:63' name='ansnode_63' ip='192.168.10.63'/>
+      <host mac='52:54:00:10:10:64' name='ansnode_64' ip='192.168.10.64'/>
+      <host mac='52:54:00:10:10:65' name='ansnode_65' ip='192.168.10.65'/>
+      <host mac='52:54:00:10:10:66' name='ansnode_66' ip='192.168.10.66'/>
+      <host mac='52:54:00:10:10:67' name='ansnode_67' ip='192.168.10.67'/>
+      <host mac='52:54:00:10:10:68' name='ansnode_68' ip='192.168.10.68'/>
+      <host mac='52:54:00:10:10:69' name='ansnode_69' ip='192.168.10.69'/>
+      <host mac='52:54:00:10:10:70' name='ansnode_70' ip='192.168.10.70'/>
+      <host mac='52:54:00:10:10:71' name='ansnode_71' ip='192.168.10.71'/>
+      <host mac='52:54:00:10:10:72' name='ansnode_72' ip='192.168.10.72'/>
+      <host mac='52:54:00:10:10:73' name='ansnode_73' ip='192.168.10.73'/>
+      <host mac='52:54:00:10:10:74' name='ansnode_74' ip='192.168.10.74'/>
+      <host mac='52:54:00:10:10:75' name='ansnode_75' ip='192.168.10.75'/>
+      <host mac='52:54:00:10:10:76' name='ansnode_76' ip='192.168.10.76'/>
+      <host mac='52:54:00:10:10:77' name='ansnode_77' ip='192.168.10.77'/>
+      <host mac='52:54:00:10:10:78' name='ansnode_78' ip='192.168.10.78'/>
+      <host mac='52:54:00:10:10:79' name='ansnode_79' ip='192.168.10.79'/>
+      <host mac='52:54:00:10:10:80' name='ansnode_80' ip='192.168.10.80'/>
+      <host mac='52:54:00:10:10:81' name='ansnode_81' ip='192.168.10.81'/>
+      <host mac='52:54:00:10:10:82' name='ansnode_82' ip='192.168.10.82'/>
+      <host mac='52:54:00:10:10:83' name='ansnode_83' ip='192.168.10.83'/>
+      <host mac='52:54:00:10:10:84' name='ansnode_84' ip='192.168.10.84'/>
+      <host mac='52:54:00:10:10:85' name='ansnode_85' ip='192.168.10.85'/>
+      <host mac='52:54:00:10:10:86' name='ansnode_86' ip='192.168.10.86'/>
+      <host mac='52:54:00:10:10:87' name='ansnode_87' ip='192.168.10.87'/>
+      <host mac='52:54:00:10:10:88' name='ansnode_88' ip='192.168.10.88'/>
+      <host mac='52:54:00:10:10:89' name='ansnode_89' ip='192.168.10.89'/>
+      <host mac='52:54:00:10:10:90' name='ansnode_90' ip='192.168.10.90'/>
+      <host mac='52:54:00:10:10:91' name='ansnode_91' ip='192.168.10.91'/>
+      <host mac='52:54:00:10:10:92' name='ansnode_92' ip='192.168.10.92'/>
+      <host mac='52:54:00:10:10:93' name='ansnode_93' ip='192.168.10.93'/>
+      <host mac='52:54:00:10:10:94' name='ansnode_94' ip='192.168.10.94'/>
+      <host mac='52:54:00:10:10:95' name='ansnode_95' ip='192.168.10.95'/>
+      <host mac='52:54:00:10:10:96' name='ansnode_96' ip='192.168.10.96'/>
+      <host mac='52:54:00:10:10:97' name='ansnode_97' ip='192.168.10.97'/>
+      <host mac='52:54:00:10:10:98' name='ansnode_98' ip='192.168.10.98'/>
+      <host mac='52:54:00:10:10:99' name='ansnode_99' ip='192.168.10.99'/>
+
+    </dhcp>
+  </ip>
+</network>
