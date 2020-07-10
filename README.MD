@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-This is KVM Guest cloning script useful for creating Lab Environment for various scenarios. Like Exam Practices ,FreeIPA lab , Testing the code, Infra testing may more.  **This script can create about 99 KVM Guests** clones with  nameing from** AnsNode_1 to AnsNode_99 ** in organized manner. So that we don't have remember or check what is what. Sample Details for 1st KVM Clone which is 'AnsNode_1' how it allocate devices and address after cloning.
+This is KVM Guest cloning script useful for creating Lab Environment for various scenarios. Like Exam Practices ,FreeIPA lab , Testing the code, Infra testing may more.  **This script can create about 99 KVM Guests** clones with  nameing from** AnsNode_1 to AnsNode_99** in organized manner. So that we don't have remember or check what is what. Sample Details for 1st KVM Clone which is 'AnsNode_1' how it allocate devices and address after cloning.
 
 
 ### [ AnsNode_1 KVM Clone details after cloning ]
@@ -33,16 +33,16 @@ KVM 'my_lab_internal' network IP NIC address  : 192.168.20.1
 
 - It can create about 99 KVM Guest with Eastimated details like  **MAC Address** , **IP Address for NAT and Internal Networks** , **Addition LVM 2GB disk NAME** , **KVM NAME Itself** , **KVM Hostname**.
 
-- We can configure default Storage pool if required at the time of cloning. We have to pass desired storage pool path for Exp: ** /data**  . ** [default /var/lib/libvirt/images]**
+- We can configure default Storage pool if required at the time of cloning. We have to pass desired storage pool path for Exp: **/data**  . **Default [/var/lib/libvirt/images]**
 
-- We** can tune the KVM Guest cloning count ** as per requirement , Just pass the clone number at prompt.
+- We can tune the KVM Guest cloning count  as per requirement , Just pass the clone number at prompt.
 - It will also create 2 unique virtual  bridge named** 'NATbr1' ** and ** 'Internalbr2'** to avoid any existing bridge name conflict. 
 
 - It will create separate  networks and attach it to all clones **'my_lab_nat'**  and **'my_lab_internal'.**
 
--** IP and Name Resolution for KVM Guests**: Network definition file** 'my_lab_nat.xml'**   consist all 99 KVM Guest** MAC id** and **IP Address** details. As result all KVM cloned guest can resolve them self**  by name and IP address.** Its ideal scenario for many lab practices such like **FreeIPA** Server  practice lab.
+- **IP and Name Resolution for KVM Guests**: Network definition file **'my_lab_nat.xml'**   consist all 99 KVM Guest **MAC id** and **IP Address** details. As result all KVM cloned guest can resolve them self **by name and IP address.** Its ideal scenario for many lab practices such like **FreeIPA** Server  practice lab.
 
-- The script attaches** 2GB addition disk** to perform** LVM ** and other additional practices
+- The script attaches **2GB addition disk** to perform **LVM** and other additional practices
 
 - The script also has guest clean in wizard which can clean all 99 KVM Guest at once. And perform fresh clone at desired count.
 
@@ -52,13 +52,13 @@ KVM 'my_lab_internal' network IP NIC address  : 192.168.20.1
 
 - One KVM Host with CentOS/Red Hat version 7 or 8. It should work any other distributions as well.
 
-- One KVM Guest  installed which you want clone for lab .In our case its "Clone_Guest" . Remove any attached  NIC before stating cloning** [use: virt-manager => View=>details ]**. Script will add 2 NIC’s and connect its networks while cloning. Remove any network file if exist for NIC at /etc/sysconfig/network-scripts/ifcfg-[removed NIC NAME]  to avoid any further network conflict after cloning.
+- One KVM Guest  installed which you want clone for lab .In our case its "Clone_Guest" . Remove any attached  NIC before stating cloning **[use: virt-manager => View=>details ]**. Script will add 2 NIC’s and connect its networks while cloning. Remove any network file if exist for NIC at **/etc/sysconfig/network-scripts/ifcfg-[removed NIC NAME]**  to avoid any further network conflict after cloning.
 
-- To be low on resources the  script sets  KVM Guest Max Mermory limit to 512 MB. Automomatically
+- To be low on resources the  script sets  KVM Guest Max Mermory limit to **512 MB**. Automomatically
 
-- The Script  also limits max CPU allocation to 1 .
+- The Script  also limits max CPU allocation to **1** .
 
-- Set hostname to ‘localhost’ of Clone_Guest  as 'my_lab_nat' network will auto set hostnames from ansnode_1 to ansnode_99. Ensure all ok by restarting network service on Clone_Guest. 
+- Set hostname to **‘localhost’** of Clone_Guest  as **'my_lab_nat'** network will auto set hostnames from **ansnode_1 to ansnode_99**. Ensure all ok by restarting network service on Clone_Guest. 
 
 - Set Clone_Guest size as small as possible as we can create around 99  instances for the same. 15 Gb will be sufficient for practice/Testing.  
 
@@ -296,7 +296,7 @@ In some cases kvm guest auto hostname setting not work. Check attached my_lab_na
 
 ### 1. Verify running KVM Guest on Host :-
 
-**Use following command **
+**Use following command**
 
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]# virsh list --all
@@ -310,8 +310,9 @@ In some cases kvm guest auto hostname setting not work. Check attached my_lab_na
  -      Clone_Guest                    shut off 
 ```
 
-### 2. Verify KVM Guest Information
-**Use following command **
+### 2. Verify KVM Guest Information on KVM Host
+
+**Use following command**
 
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]#  virsh dominfo --domain AnsNode_1
@@ -331,8 +332,9 @@ Security model: selinux
 Security DOI:   0
 Security label: system_u:system_r:svirt_t:s0:c294,c405 (enforcing)
 ```
-### 3. Verify Attached Block Devices to KVM Guest AnsNode_1
-**Use following command on KVM Host **
+### 3. Verify Attached Block Devices to KVM Guest AnsNode_1 on KVM Host
+
+**Use following command on KVM Host**
 
 ```
 [root@centos8_master KVM_Setup_Ansible_Lab]# virsh domblklist --domain AnsNode_1
@@ -342,8 +344,9 @@ vda        /var/lib/libvirt/images/AnsNode_1.qcow2
 vdb        /var/lib/libvirt/images/Guest_Attached_Disk/AnsNode_1_raw_2G
 
 ```
-### 4. Verify virtual networks for lab 
-**Use 'ip a' command on KVM Host **
+### 4. Verify virtual networks for lab on KVM Host
+
+**Use 'ip a' command on KVM Host**
 
 ```
 [santosh@centos8_master ~]$ ip a
@@ -380,7 +383,7 @@ ansnode_1
 ```
 ### 2. Verify IP and MAC Address on KVM Guest
 
-Using** "ip a" **to show network Configuration  of **AnsNode_1** 1st clone 
+Using **'ip a'** to show network Configuration  of **AnsNode_1** 1st clone 
 
 ```
 [root@ansnode_1 ~]# ip a
@@ -406,7 +409,7 @@ Using** "ip a" **to show network Configuration  of **AnsNode_1** 1st clone
 ```
 ### 3. Hostname  Resolution from KVM Guest 
 
-For NAT from 'my_lab_nat' network to INTERNET
+For NAT from **'my_lab_nat'** network to INTERNET
 
 ```
 [root@ansnode_1 ~]# ping google.com
