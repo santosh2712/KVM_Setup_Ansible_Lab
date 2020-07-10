@@ -1,5 +1,7 @@
 # KVM Guest Cloning for Ansible lab / FreeIPA lab / Testing lab    
+
 ## Introduction 
+
 This is KVM Guest cloning script useful for creating Lab Environment for various scenarios. Like Exam Practices ,FreeIPA lab , Testing the code, Infra testing may more.  **This script can create about 99 KVM Guests** clones with  nameing from** AnsNode_1 to AnsNode_99 ** in organized manner. So that we don't have remember or check what is what. Sample Details for 1st KVM Clone which is 'AnsNode_1' how it allocate devices and address after cloning.
 
 
@@ -420,7 +422,7 @@ PING google.com (172.217.174.238) 56(84) bytes of data.
 rtt min/avg/max/mdev = 85.418/353.628/677.383/250.339 ms
 [root@ansnode_1 ~]#
 ``` 
-https://github.com/santosh2712/KVM_Setup_Ansible_Lab/archive/master.zip
+
 ### 4. Forward lookup from ansnode_1 for ansnode_5  on  KVM Guest
 
 ```
