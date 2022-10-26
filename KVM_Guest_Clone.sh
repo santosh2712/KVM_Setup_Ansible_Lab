@@ -416,6 +416,74 @@ fi
 # 
 }
 
+
+# 
+IF_HOST_OS_RedHat_fedora36 () 
+{
+Print_lines_Funtion	
+Fount_OS_Display_Funtion
+Print_lines_Funtion	
+# 
+Get_KVM_Guest_Name
+Print_lines_Funtion
+# 
+Get_KVM_Guest_Installation_Path_Funtion
+# 
+virsh shutdown "$Base_Clone_KVM_NAME" > /dev/null 2>&1
+wait 
+# Print_lines_Funtion
+declare -i VM_Exist_Count=$(sudo virsh list --all | grep "$Base_Clone_KVM_NAME" | wc -l  )
+declare base_VM_State=$( virsh list --state-shutoff | grep -o "$Base_Clone_KVM_NAME" )
+# 
+# 
+if [[ $EUID -eq 0 ]] && [ $VM_Exist_Count -eq 1 ] && [[ "$base_VM_State" = "$Base_Clone_KVM_NAME"  ]] ; then
+	#statements
+	DirCheckFunction
+	# 
+	if [[ -w "$KVM_Guest_Disk_DIR"  ]] && [[ -w "$Attached_Disks_DIR" ]]  ; then
+			#statements
+			#	
+			Check_and_Define_Networks_IfnotFound_Funtion
+			#
+			# declare Libvirtd_Status=$(systemctl is-active libvirtd)
+			declare Libvirtd_Status="active"
+			# 
+		if [[ "$Libvirtd_Status" == "active" ]]; then
+			# 
+			Print_lines_Funtion -
+			echo "INFO: Service libvirtd found running. "
+			Print_lines_Funtion -
+			# 
+			# 
+			Print_lines_Funtion -
+			Clear_all_Old_Cloned_Guests_Funtion
+			Print_lines_Funtion -
+			#
+			# 
+			Create_Uniform_Guest_Clones_Funtion 
+			# 
+		else
+			# 
+			Print_lines_Funtion =
+			echo "libvirtd service is not running. Exiting Script."
+			Print_lines_Funtion =
+			exit 3 
+		fi
+		# 
+	else
+		
+		Print_lines_Funtion =
+		echo -e "Ensure $KVM_Guest_Disk_DIR and $Attached_Disks_DIR directory's  are writable.\\n Exiting Script." 
+		Print_lines_Funtion =
+	fi
+	# 
+else 
+	# 
+	Error_Code_1_MASSAGE_Function
+	# 
+fi
+# 
+}
 #==========================================#
 #  Script Body Section 
 # 
@@ -435,6 +503,14 @@ if 	[[ $OS == "Red Hat" ]]  ; then
 			Print_lines_Funtion 
 			echo "In some cases kvm guest auto hostname setting not work. Check attached default.xml "
 			Print_lines_Funtion 
+	elif [[ $OS == "Red Hat" ]] && [ $VER -eq 36 ]  ; then
+			# 
+			IF_HOST_OS_RedHat_fedora36
+			# 
+			Print_lines_Funtion 
+			echo "In some cases kvm guest auto hostname setting not work. Check attached default.xml "
+			Print_lines_Funtion 
+
 	else 	
 			Script_is_not_compatible_with_Host_OS_Function
 	fi
