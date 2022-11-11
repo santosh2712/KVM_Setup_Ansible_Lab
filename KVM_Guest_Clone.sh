@@ -8,7 +8,7 @@
 # Warrenty  : NO warrenty 
 #--------------------------------------------------------------------------------------
 # Purpose   : This script is for creating Ansible Lab of 4 Nodes having nameing 
-#           : convention Ansnode_1 to Ansnode_4. with use of virt-clone.
+#           : convention clonenode_1 to clonenode_4. with use of virt-clone.
 #           : By default 2 NIC will be attached to each node. Having networks like NAT and INTERNAL 
 # Type      : Independent (Requires to network files at currunt location)
 # -------------------------------------------------------------------------------------
@@ -171,7 +171,7 @@ function YES ()
  { 
 	for i in $(seq 1 99 ) ; do
 		# 
-		declare VMNAME="AnsNode_$i"
+		declare VMNAME="clonenode_$i"
 		virsh shutdown --domain  "$VMNAME"   >> /dev/null 2>&1
 		wait
 		virsh destroy  --domain  "$VMNAME"  >> /dev/null 2>&1
@@ -180,7 +180,7 @@ function YES ()
 		wait 
 	done
 	Print_lines_Funtion -
-	echo "INFO: Cleared all KVM guest with from AnsNode_01 to AnsNode_99"	
+	echo "INFO: Cleared all KVM guest with from clonenode_01 to clonenode_99"	
 	Print_lines_Funtion -
  }
 
@@ -191,9 +191,9 @@ function  NO ()
 	Print_lines_Funtion -
 
  }
- echo "Do you want to clear all existing guest with name Ansnode_* " 
+ echo "Do you want to clear all existing guest with name clonenode_* " 
  echo -e  "\e[30;43;5;82m| Choose an option: Enter input between 1-3 only |\e[0m"\\n'==================================================='
-		options=("Clear All AnsNode_* Guests " "Clear only New AnsNode_ Guests" "Quit")
+		options=("Clear All clonenode_* Guests " "Clear only New clonenode_ Guests" "Quit")
         select opt in "${options[@]}"; do
             #
             case $REPLY in
@@ -231,7 +231,7 @@ Print_lines_Funtion -
 for i in $(seq 1 $Last_VM_Clone_Number ) ; do
 	# 
 	# echo $i 
-	declare VMNAME="AnsNode_$i"
+	declare VMNAME="clonenode_$i"
 	virsh shutdown --domain  "$VMNAME"   >> /dev/null 2>&1
 	wait
 	virsh destroy  --domain  "$VMNAME"  >> /dev/null 2>&1
@@ -442,10 +442,11 @@ if [[ $EUID -eq 0 ]] && [ $VM_Exist_Count -eq 1 ] && [[ "$base_VM_State" = "$Bas
 	# 
 	if [[ -w "$KVM_Guest_Disk_DIR"  ]] && [[ -w "$Attached_Disks_DIR" ]]  ; then
 			#statements
-			#	
+			chown -R qemu:qemu $Attached_Disks_DIR
 			Check_and_Define_Networks_IfnotFound_Funtion
 			#
 			# declare Libvirtd_Status=$(systemctl is-active libvirtd)
+			# fedora36 not required libvird now to set to active
 			declare Libvirtd_Status="active"
 			# 
 		if [[ "$Libvirtd_Status" == "active" ]]; then
